@@ -1,0 +1,25 @@
+{
+    "liveServer.settings.port": 5500,
+    "liveSassCompile.settings.generateMap": true,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/css",
+        },
+    ],
+    // タブ
+    "editor.tabSize": 4,
+    // 改行コード
+    "files.eol": "\n",
+    // ファイル保存時、最終行に改行を挿入する
+    "files.insertFinalNewline": true,
+    // ファイル保存時、最終行以降の空行を削除する
+    "files.trimFinalNewlines": true,
+    // ファイル保存時、末尾の空白をトリミングする
+    "files.trimTrailingWhitespace": true,
+    // 自動保存設定をする
+	"files.autoSave": "afterDelay",
+    // ファイル保存時、コードを整形する
+	"editor.formatOnSave": true,
+}
