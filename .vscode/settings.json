@@ -19,7 +19,7 @@
     // ファイル保存時、末尾の空白をトリミングする
     "files.trimTrailingWhitespace": true,
     // 自動保存設定をする
-	"files.autoSave": "afterDelay",
+    "files.autoSave": "afterDelay",
     // ファイル保存時、コードを整形する
-	"editor.formatOnSave": true,
+    "editor.formatOnSave": true,
 }
