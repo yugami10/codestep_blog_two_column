@@ -6,8 +6,9 @@ img {
 }
 
 .logo {
-    padding: 20px 20%;
-    height: 70px;
+    padding: 20px 14px;
+    margin: 0 auto;
+    max-width: 1200px;
 
     .logo__heading {
         height: 30px;
@@ -21,12 +22,12 @@ img {
 
     .nav__list {
         display: flex;
-        padding: 0 20%;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 16px 14px;
     }
 
     .nav__item {
-        padding: 16px 0;
-
         &:not(:last-child) {
             margin-right: 60px;
         }
