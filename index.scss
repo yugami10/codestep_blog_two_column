@@ -20,6 +20,11 @@ body {
     font-weight: bold;
 }
 
+@mixin aside_title_font {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .logo {
     padding: 20px 14px;
     margin: 0 auto;
@@ -159,4 +164,73 @@ body {
 
 .aside {
     max-width: 345px;
+    margin-top: 16px;
+}
+
+.author {
+    &__img_area {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto;
+    }
+
+    &__img {
+        border-radius: 50%;
+    }
+
+    &__name {
+        margin-top: 35px;
+        text-align: center;
+        @include aside_title_font;
+    }
+
+    &__explain {
+        margin-top: 37px;
+        letter-spacing: 0.1em;
+        line-height: 1.4em;
+    }
+}
+
+.ranking {
+    &__label {
+        margin-top: 57px;
+        text-align: center;
+        @include aside_title_font;
+    }
+}
+
+.ranking_article {
+    &:not(:first-of-type) {
+        margin-top: 31px;
+    }
+
+    &__title {
+        letter-spacing: 0.1em;
+        line-height: 1.2em;
+    }
+
+    &__img_area {
+        height: 194px;
+    }
+}
+
+.archive {
+    &__label {
+        margin-top: 66px;
+        text-align: center;
+        @include aside_title_font;
+    }
+
+    &__item_list {
+        margin-top: 34px;
+    }
+
+    &__item {
+        border-top: solid 1px #777777;
+        padding: 25px 0 25px 25px;
+
+        &:last-child {
+            border-bottom: solid 1px #777777;
+        }
+    }
 }
