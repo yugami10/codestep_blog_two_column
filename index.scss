@@ -9,6 +9,12 @@ body {
     font-family: "Meiryo UI", "Meiryo";
 }
 
+// map
+$breakpoint: (
+    sp: 'screen and (max-width: 375px)',
+    pc: 'screen and (min-width: 375px)',
+);
+
 // mixin
 @mixin title_font {
     font-size: 16px;
@@ -23,6 +29,12 @@ body {
 @mixin aside_title_font {
     font-size: 18px;
     font-weight: bold;
+}
+
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+        @content;
+    }
 }
 
 .logo {
