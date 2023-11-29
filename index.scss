@@ -41,31 +41,34 @@ $breakpoint: (
     padding: 20px;
     margin: 0 auto;
     max-width: 1200px;
+
+    &__heading {
+        height: 30px;
+        max-width: 145px;
+    }
 }
 
-.logo__heading {
-    height: 30px;
-    max-width: 145px;
-}
 
 .nav {
     background-color: #333333;
     color: #FFFFFF;
     overflow-x: auto;
-}
 
-.nav__list {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 16px 14px;
-}
+    &__list {
+        display: flex;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 16px 14px;
+    }
 
-.nav__item {
-    &:not(:last-child) {
-        margin-right: 60px;
+    &__item {
+        &:not(:last-child) {
+            margin-right: 60px;
+        }
     }
 }
+
+
 
 .pickup {
     max-width: 1200px;
