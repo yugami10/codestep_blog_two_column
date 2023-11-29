@@ -68,22 +68,32 @@ $breakpoint: (
     }
 }
 
-
-
 .pickup {
     max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 40px;
+    margin: 40px auto 0;
     display: flex;
     justify-content: space-between;
+
+    @include mq(sp) {
+        flex-direction: column;
+        margin: 30px 16px 0;
+    }
 }
 
 .pickup_article {
     width: 373px;
 
+    @include mq(sp) {
+        width: auto;
+    }
+
     &__img_area {
         max-width: 373px;
         height: 210px;
+
+        @include mq(sp) {
+            max-width: initial;
+        }
     }
 
     &__text {
