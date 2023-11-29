@@ -38,7 +38,7 @@ $breakpoint: (
 }
 
 .logo {
-    padding: 20px 14px;
+    padding: 20px;
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -51,6 +51,7 @@ $breakpoint: (
 .nav {
     background-color: #333333;
     color: #FFFFFF;
+    overflow-x: auto;
 }
 
 .nav__list {
