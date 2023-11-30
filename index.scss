@@ -127,6 +127,11 @@ $breakpoint: (
     justify-content: space-between;
     max-width: 1200px;
     margin: 77px auto 0;
+
+    @include mq(sp) {
+        flex-direction: column;
+        margin: 107px 16px 0;
+    }
 }
 
 .main {
@@ -142,11 +147,20 @@ $breakpoint: (
 
     &__title {
         @include main_article_font;
+
+        @include mq(sp) {
+            letter-spacing: 0.1em;
+            line-height: 1.3em;
+        }
     }
 
     &__tag {
         display: flex;
-        margin-top: 27px
+        margin-top: 27px;
+
+        @include mq(sp) {
+            margin-top: 22px;
+        }
     }
 
     &__tag_item {
@@ -158,6 +172,10 @@ $breakpoint: (
     &__img {
         margin-top: 13px;
         max-height: 427px;
+
+        @include mq(sp) {
+            margin-top: 22px;
+        }
     }
 
     &__content_text {
@@ -166,11 +184,19 @@ $breakpoint: (
         font-size: 16px;
         letter-spacing: 0.2em;
         line-height: 1.7em;
+
+        @include mq(sp) {
+            margin: 13px 44px 0;
+        }
     }
 
     &__read_more_area {
         text-align: center;
         margin-top: 33px;
+
+        @include mq(sp) {
+            margin-top: 21px;
+        }
     }
 
     &__read_more {
