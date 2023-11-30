@@ -302,6 +302,11 @@ $breakpoint: (
     background-color: #F7F7F7;
     margin-top: 140px;
     padding-top: 55px;
+
+    @include mq(sp) {
+        height: 100%;
+        padding: 55px 16px 0;
+    }
 }
 
 .footer_container {
@@ -310,11 +315,19 @@ $breakpoint: (
     display: flex;
     justify-content: space-between;
 
-    &__item {
-        width: 350px;
+    @include mq(sp) {
+        flex-direction: column;
     }
 
-    &__title {
+    &__item {
+        width: 350px;
+
+        @include mq(sp) {
+            width: 100%;
+        }
+    }
+
+    &__about_title {
         text-align: left;
         @include aside_title_font;
     }
@@ -340,6 +353,15 @@ $breakpoint: (
         }
     }
 
+    &__menu_title {
+        text-align: left;
+        @include aside_title_font;
+
+        @include mq(sp) {
+            margin-top: 59px;
+        }
+    }
+
     &__menu_list {
         margin-top: 34px;
     }
@@ -353,9 +375,34 @@ $breakpoint: (
         }
     }
 
+    &__twitter_title {
+        text-align: left;
+        @include aside_title_font;
+
+        @include mq(sp) {
+            margin-top: 35px;
+        }
+    }
+
     &__twitter_img_area {
         max-width: 347px;
         height: 315px;
         margin-top: 34px;
+
+        @include mq(sp) {
+            max-width: initial;
+            height: 315px;
+        }
+    }
+
+}
+
+.copy_right {
+    text-align: center;
+    margin: 64px auto 0;
+    padding-bottom: 12px;
+
+    @include mq(sp) {
+        margin-top: 94px;
     }
 }
