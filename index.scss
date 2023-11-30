@@ -217,6 +217,11 @@ $breakpoint: (
 .aside {
     max-width: 345px;
     margin-top: 16px;
+
+    @include mq(sp) {
+        max-width: initial;
+        margin-top: 83px;
+    }
 }
 
 .author {
@@ -280,6 +285,10 @@ $breakpoint: (
     &__item {
         border-top: solid 1px #777777;
         padding: 25px 0 25px 25px;
+
+        @include mq(sp) {
+            padding: 23px 0 23px 23px;
+        }
 
         &:last-child {
             border-bottom: solid 1px #777777;
