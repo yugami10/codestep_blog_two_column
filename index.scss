@@ -9,6 +9,12 @@ body {
     font-family: "Meiryo UI", "Meiryo";
 }
 
+// map
+$breakpoint: (
+    sp: 'screen and (max-width: 767px)',
+    pc: 'screen and (min-width: 767px)',
+);
+
 // mixin
 @mixin title_font {
     font-size: 16px;
@@ -25,49 +31,69 @@ body {
     font-weight: bold;
 }
 
-.logo {
-    padding: 20px 14px;
-    margin: 0 auto;
-    max-width: 1200px;
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+        @content;
+    }
 }
 
-.logo__heading {
-    height: 30px;
-    max-width: 145px;
+.logo {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    &__heading {
+        height: 30px;
+        max-width: 145px;
+    }
 }
+
 
 .nav {
     background-color: #333333;
     color: #FFFFFF;
-}
+    overflow-x: auto;
 
-.nav__list {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 16px 14px;
-}
+    &__list {
+        display: flex;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 16px 14px;
+    }
 
-.nav__item {
-    &:not(:last-child) {
-        margin-right: 60px;
+    &__item {
+        &:not(:last-child) {
+            margin-right: 60px;
+        }
     }
 }
 
 .pickup {
     max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 40px;
+    margin: 40px auto 0;
     display: flex;
     justify-content: space-between;
+
+    @include mq(sp) {
+        flex-direction: column;
+        margin: 30px 16px 0;
+    }
 }
 
 .pickup_article {
     width: 373px;
 
+    @include mq(sp) {
+        width: auto;
+    }
+
     &__img_area {
         max-width: 373px;
         height: 210px;
+
+        @include mq(sp) {
+            max-width: initial;
+        }
     }
 
     &__text {
@@ -101,6 +127,11 @@ body {
     justify-content: space-between;
     max-width: 1200px;
     margin: 77px auto 0;
+
+    @include mq(sp) {
+        flex-direction: column;
+        margin: 107px 16px 0;
+    }
 }
 
 .main {
@@ -116,11 +147,20 @@ body {
 
     &__title {
         @include main_article_font;
+
+        @include mq(sp) {
+            letter-spacing: 0.1em;
+            line-height: 1.3em;
+        }
     }
 
     &__tag {
         display: flex;
-        margin-top: 27px
+        margin-top: 27px;
+
+        @include mq(sp) {
+            margin-top: 22px;
+        }
     }
 
     &__tag_item {
@@ -132,6 +172,10 @@ body {
     &__img {
         margin-top: 13px;
         max-height: 427px;
+
+        @include mq(sp) {
+            margin-top: 22px;
+        }
     }
 
     &__content_text {
@@ -140,11 +184,19 @@ body {
         font-size: 16px;
         letter-spacing: 0.2em;
         line-height: 1.7em;
+
+        @include mq(sp) {
+            margin: 13px 44px 0;
+        }
     }
 
     &__read_more_area {
         text-align: center;
         margin-top: 33px;
+
+        @include mq(sp) {
+            margin-top: 21px;
+        }
     }
 
     &__read_more {
@@ -165,6 +217,11 @@ body {
 .aside {
     max-width: 345px;
     margin-top: 16px;
+
+    @include mq(sp) {
+        max-width: initial;
+        margin-top: 83px;
+    }
 }
 
 .author {
@@ -229,6 +286,10 @@ body {
         border-top: solid 1px #777777;
         padding: 25px 0 25px 25px;
 
+        @include mq(sp) {
+            padding: 23px 0 23px 23px;
+        }
+
         &:last-child {
             border-bottom: solid 1px #777777;
         }
@@ -241,6 +302,11 @@ body {
     background-color: #F7F7F7;
     margin-top: 140px;
     padding-top: 55px;
+
+    @include mq(sp) {
+        height: 100%;
+        padding: 55px 16px 0;
+    }
 }
 
 .footer_container {
@@ -249,11 +315,19 @@ body {
     display: flex;
     justify-content: space-between;
 
-    &__item {
-        width: 350px;
+    @include mq(sp) {
+        flex-direction: column;
     }
 
-    &__title {
+    &__item {
+        width: 350px;
+
+        @include mq(sp) {
+            width: 100%;
+        }
+    }
+
+    &__about_title {
         text-align: left;
         @include aside_title_font;
     }
@@ -279,6 +353,15 @@ body {
         }
     }
 
+    &__menu_title {
+        text-align: left;
+        @include aside_title_font;
+
+        @include mq(sp) {
+            margin-top: 59px;
+        }
+    }
+
     &__menu_list {
         margin-top: 34px;
     }
@@ -292,9 +375,34 @@ body {
         }
     }
 
+    &__twitter_title {
+        text-align: left;
+        @include aside_title_font;
+
+        @include mq(sp) {
+            margin-top: 35px;
+        }
+    }
+
     &__twitter_img_area {
         max-width: 347px;
         height: 315px;
         margin-top: 34px;
+
+        @include mq(sp) {
+            max-width: initial;
+            height: 315px;
+        }
+    }
+
+}
+
+.copy_right {
+    text-align: center;
+    margin: 64px auto 0;
+    padding-bottom: 12px;
+
+    @include mq(sp) {
+        margin-top: 94px;
     }
 }
