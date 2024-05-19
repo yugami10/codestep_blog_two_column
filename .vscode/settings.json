@@ -5,7 +5,7 @@
         {
             "format": "compressed",
             "extensionName": ".min.css",
-            "savePath": "/css",
+            "savePath": "/themes/codestep_blog_two_column",
         },
     ],
     // タブ
