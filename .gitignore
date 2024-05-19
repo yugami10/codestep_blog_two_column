@@ -1,0 +1,12 @@
+/wp-admin
+/wp-includes
+/wp-content/themes/twentytwentyfour
+/wp-content/themes/twentytwentythree
+/wp-content/themes/twentytwentytwo
+/wp-content/languages/*
+/wp-*.php
+/index.php
+/local-xdebuginfo.php
+/xmlrpc.php
+.htaccess
+license.txt
