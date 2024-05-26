@@ -2,16 +2,14 @@
 
 
 <head>
-    <meta name="viewport" content="width=deveice-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/destyle.css" />
-    <link rel="stylesheet" href="./css/index.min.css" />
+    <?php wp_head(); ?>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
             <h1 class="logo__heading">
-                <img class="logo__heading--img" src="img/logo.svg" alt"logo" />
+                <img class="logo__heading--img" src="<?= get_template_directory_uri() . '/img/logo.svg' ?>" alt"logo" />
             </h1>
         </div>
         <nav class="nav">
@@ -28,7 +26,7 @@
         <section class="pickup">
             <article class="pickup_article">
                 <div class="pickup_article__img_area">
-                    <img src="img/pgt79.png" alt="" />
+                    <img src="<?= get_template_directory_uri() . '/img/pgt79.png' ?>" alt="" />
                 </div>
                 <h2 class="pickup_article__text">タイトルテキストテキストテキストテキストテキス トテキストテキスト</h2>
                 <div class="pickup_article__read_more_area">
@@ -37,7 +35,7 @@
             </article>
             <article class="pickup_article">
                 <div class="pickup_article__img_area">
-                    <img src="img/7ou85.png" alt="" />
+                    <img src="<?= get_template_directory_uri() . '/img/7ou85.png' ?>" alt="" />
                 </div>
                 <h2 class="pickup_article__text">タイトルテキストテキストテキストテキストテキス トテキストテキスト</h2>
                 <div class="pickup_article__read_more_area">
@@ -46,7 +44,7 @@
             </article>
             <article class="pickup_article">
                 <div class="pickup_article__img_area">
-                    <img src="img/putr3.png" alt="" />
+                    <img src="<?= get_template_directory_uri() . '/img/putr3.png' ?>" alt="" />
                 </div>
                 <h2 class="pickup_article__text">タイトルテキストテキストテキストテキストテキス トテキストテキスト</h2>
                 <div class="pickup_article__read_more_area">
@@ -62,8 +60,7 @@
                         <li class="main_article__tag_item">2020/01/01</li>
                         <li class="main_article__tag_item">カテゴリ1</li>
                     </ul>
-                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg"
-                        alt="" class="main_article__img" />
+                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg" alt="" class="main_article__img" />
                     <p class="main_article__content_text">
                         本文テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキスト テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキ
                         ストテキストテキストテキストテキストテキスト
@@ -78,8 +75,7 @@
                         <li class="main_article__tag_item">2020/01/01</li>
                         <li class="main_article__tag_item">カテゴリ1</li>
                     </ul>
-                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg"
-                        alt="" class="main_article__img" />
+                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg" alt="" class="main_article__img" />
                     <p class="main_article__content_text">
                         本文テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキスト テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキ
                         ストテキストテキストテキストテキストテキスト
@@ -94,8 +90,7 @@
                         <li class="main_article__tag_item">2020/01/01</li>
                         <li class="main_article__tag_item">カテゴリ1</li>
                     </ul>
-                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg"
-                        alt="" class="main_article__img" />
+                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg" alt="" class="main_article__img" />
                     <p class="main_article__content_text">
                         本文テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキスト テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキ
                         ストテキストテキストテキストテキストテキスト
@@ -108,8 +103,7 @@
             <div class="aside">
                 <section class="author">
                     <div class="author__img_area">
-                        <img src="https://times-abema.ismcdn.jp/mwimgs/2/9/724w/img_29edc046f3b868a241ab2120a352f37771365.jpg"
-                            alt="" class="author__img" />
+                        <img src="https://times-abema.ismcdn.jp/mwimgs/2/9/724w/img_29edc046f3b868a241ab2120a352f37771365.jpg" alt="" class="author__img" />
                     </div>
                     <h3 class="author__name">Name Name</h3>
                     <p class="author__explain">プロフィールテキストテキストテキストテキストテキ ストテキストテキストテキストテキストテキストテキ
@@ -119,19 +113,19 @@
                     <h3 class="ranking__label">Ranking</h3>
                     <article class="ranking_article">
                         <div class="ranking_article__img_area">
-                            <img src="img/pgt79.png" alt="" />
+                            <img src="<?= get_template_directory_uri() . '/img/pgt79.png' ?>" alt="" />
                         </div>
                         <h4 class="ranking_article__title">タイトルテキストテキストテキストテキストテキスト テキスト</h4>
                     </article>
                     <article class="ranking_article">
                         <div class="ranking_article__img_area">
-                            <img src="img/7ou85.png" alt="" />
+                            <img src="<?= get_template_directory_uri() . '/img/7ou85.png' ?>" alt="" />
                         </div>
                         <h4 class="ranking_article__title">タイトルテキストテキストテキストテキストテキスト テキスト</h4>
                     </article>
                     <article class="ranking_article">
                         <div class="ranking_article__img_area">
-                            <img src="img/putr3.png" alt="" />
+                            <img src="<?= get_template_directory_uri() . '/img/putr3.png' ?>" alt="" />
                         </div>
                         <h4 class="ranking_article__title">タイトルテキストテキストテキストテキストテキスト テキスト</h4>
                     </article>
