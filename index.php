@@ -1,192 +1,46 @@
-<html>
+<?= get_header() ?>
 
 
-<head>
-    <?php wp_head(); ?>
-</head>
-
-<body>
-    <header class="header">
-        <div class="logo">
-            <h1 class="logo__heading">
-                <img class="logo__heading--img" src="<?= get_template_directory_uri() . '/img/logo.svg' ?>" alt"logo" />
-            </h1>
-        </div>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__item--link" href="#">NEW</a></li>
-                <li class="nav__item"><a class="nav__item--link" href="#">COLUMN</a></li>
-                <li class="nav__item"><a class="nav__item--link" href="#">SERIES</a></li>
-                <li class="nav__item"><a class="nav__item--link" href="#">Q&A</a></li>
-                <li class="nav__item"><a class="nav__item--link" href="#">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+<div id="container" class="wrapper">
     <main>
-        <section class="pickup">
-            <article class="pickup_article">
-                <div class="pickup_article__img_area">
-                    <img src="<?= get_template_directory_uri() . '/img/pgt79.png' ?>" alt="" />
-                </div>
-                <h2 class="pickup_article__text">タイトルテキストテキストテキストテキストテキス トテキストテキスト</h2>
-                <div class="pickup_article__read_more_area">
-                    <a href="#" class="pickup_article__read_more">READ MORE</a>
-                </div>
-            </article>
-            <article class="pickup_article">
-                <div class="pickup_article__img_area">
-                    <img src="<?= get_template_directory_uri() . '/img/7ou85.png' ?>" alt="" />
-                </div>
-                <h2 class="pickup_article__text">タイトルテキストテキストテキストテキストテキス トテキストテキスト</h2>
-                <div class="pickup_article__read_more_area">
-                    <a href="#" class="pickup_article__read_more">READ MORE</a>
-                </div>
-            </article>
-            <article class="pickup_article">
-                <div class="pickup_article__img_area">
-                    <img src="<?= get_template_directory_uri() . '/img/putr3.png' ?>" alt="" />
-                </div>
-                <h2 class="pickup_article__text">タイトルテキストテキストテキストテキストテキス トテキストテキスト</h2>
-                <div class="pickup_article__read_more_area">
-                    <a href="#" class="pickup_article__read_more">READ MORE</a>
-                </div>
-            </article>
-        </section>
-        <div class="container">
-            <section class="main">
-                <article class="main_article">
-                    <h2 class="main_article__title">タイトルテキストテキストテキストテキストテキスト</h2>
-                    <ul class="main_article__tag">
-                        <li class="main_article__tag_item">2020/01/01</li>
-                        <li class="main_article__tag_item">カテゴリ1</li>
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php
+                $cat = get_the_category();
+                $catname = $cat[0]->cat_name;
+                ?>
+                <article>
+                    <h2 class="article-title">
+                        <a href="<?= the_permalink() ?>">
+                            <?= the_title() ?>
+                        </a>
+                    </h2>
+                    <ul class="meta">
+                        <li><?= the_time('Y/m/d') ?></li>
+                        <li><?= $catname ?></li>
                     </ul>
-                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg" alt="" class="main_article__img" />
-                    <p class="main_article__content_text">
-                        本文テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキスト テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキ
-                        ストテキストテキストテキストテキストテキスト
-                    </p>
-                    <div class="main_article__read_more_area">
-                        <a class="main_article__read_more">READ MORE</a>
+                    <a href="<?= the_permalink() ?>"><?= the_post_thumbnail() ?></a>
+                    <div class="text">
+                        <?php
+                        if (mb_strlen(strip_tags(get_the_content()), 'UTF-8') > 80) {
+                            $content = mb_substr(strip_tags(get_the_content()), 0, 80, 'UTF-8');
+                            echo $content . '…';
+                        } else {
+                            echo strip_tags(get_the_content());
+                        }
+                        ?>
+                    </div>
+                    <div class="readmore">
+                        <a href="<?= the_permalink() ?>">READ MORE</a>
                     </div>
                 </article>
-                <article class="main_article">
-                    <h2 class="main_article__title">タイトルテキストテキストテキストテキストテキスト</h2>
-                    <ul class="main_article__tag">
-                        <li class="main_article__tag_item">2020/01/01</li>
-                        <li class="main_article__tag_item">カテゴリ1</li>
-                    </ul>
-                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg" alt="" class="main_article__img" />
-                    <p class="main_article__content_text">
-                        本文テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキスト テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキ
-                        ストテキストテキストテキストテキストテキスト
-                    </p>
-                    <div class="main_article__read_more_area">
-                        <a class="main_article__read_more">READ MORE</a>
-                    </div>
-                </article>
-                <article class="main_article">
-                    <h2 class="main_article__title">タイトルテキストテキストテキストテキストテキスト</h2>
-                    <ul class="main_article__tag">
-                        <li class="main_article__tag_item">2020/01/01</li>
-                        <li class="main_article__tag_item">カテゴリ1</li>
-                    </ul>
-                    <img src="https://times-abema.ismcdn.jp/mwimgs/b/d/724w/img_bd2c720ebd7a7b054306ad85567f27af77208.jpg" alt="" class="main_article__img" />
-                    <p class="main_article__content_text">
-                        本文テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキスト テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキ
-                        ストテキストテキストテキストテキストテキスト
-                    </p>
-                    <div class="main_article__read_more_area">
-                        <a class="main_article__read_more">READ MORE</a>
-                    </div>
-                </article>
-            </section>
-            <div class="aside">
-                <section class="author">
-                    <div class="author__img_area">
-                        <img src="https://times-abema.ismcdn.jp/mwimgs/2/9/724w/img_29edc046f3b868a241ab2120a352f37771365.jpg" alt="" class="author__img" />
-                    </div>
-                    <h3 class="author__name">Name Name</h3>
-                    <p class="author__explain">プロフィールテキストテキストテキストテキストテキ ストテキストテキストテキストテキストテキストテキ
-                        ストテキストテキストテキストテキストテキストテキ ストテキストテキストテキストテキストテキストテキ ストテキストテキスト</p>
-                </section>
-                <section class="ranking">
-                    <h3 class="ranking__label">Ranking</h3>
-                    <article class="ranking_article">
-                        <div class="ranking_article__img_area">
-                            <img src="<?= get_template_directory_uri() . '/img/pgt79.png' ?>" alt="" />
-                        </div>
-                        <h4 class="ranking_article__title">タイトルテキストテキストテキストテキストテキスト テキスト</h4>
-                    </article>
-                    <article class="ranking_article">
-                        <div class="ranking_article__img_area">
-                            <img src="<?= get_template_directory_uri() . '/img/7ou85.png' ?>" alt="" />
-                        </div>
-                        <h4 class="ranking_article__title">タイトルテキストテキストテキストテキストテキスト テキスト</h4>
-                    </article>
-                    <article class="ranking_article">
-                        <div class="ranking_article__img_area">
-                            <img src="<?= get_template_directory_uri() . '/img/putr3.png' ?>" alt="" />
-                        </div>
-                        <h4 class="ranking_article__title">タイトルテキストテキストテキストテキストテキスト テキスト</h4>
-                    </article>
-                </section>
-                <section class="archive">
-                    <h3 class="archive__label">Archive</h3>
-                    <ul class="archive__item_list">
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                        <li class="archive__item">XXXX年XX月(XX)</li>
-                    </ul>
-                </section>
-            </div>
-        </div>
+            <?php endwhile; ?>
+
+            <?php
+            pagination($wp_query->max_num_pages);
+            ?>
+        <?php endif; ?>
     </main>
-    <footer class="footer">
-        <div class="footer_container">
-            <section class="footer_container__item">
-                <h3 class="footer_container__about_title">About</h3>
-                <p class="footer_container__about_text">
-                    テキストテキストテキストテキストテキストテキストテ キストテキストテキストテキスト テキストテキストテ キストテキストテキストテキストテキストテキストテキ ストテキスト
-                    テキストテキストテキストテキストテキ ストテキストテキストテキストテキストテキスト
-                </p>
-                <ul class="footer_container__about_detail_list">
-                    <li class="footer_container__about_detail_item">プロフィール詳細</li>
-                    <li class="footer_container__about_detail_item">お仕事の依頼</li>
-                    <li class="footer_container__about_detail_item">お問い合わせ</li>
-                </ul>
-            </section>
-            <section class="footer_container__item">
-                <h3 class="footer_container__menu_title">Menu</h3>
-                <ul class="footer_container__menu_list">
-                    <li class="footer_container__menu_item">NEW</li>
-                    <li class="footer_container__menu_item">CATEGORY</li>
-                    <li class="footer_container__menu_item">COLUMN</li>
-                    <li class="footer_container__menu_item">SERIES</li>
-                    <li class="footer_container__menu_item">Q&A</li>
-                </ul>
-            </section>
-            <section class="footer_container__item">
-                <h3 class="footer_container__twitter_title">Twitter</h3>
-                <div class="footer_container__twitter_img_area">
-                    <img src="https://ecotopia.earth/wp-content/uploads/510-1.jpg" alt="" />
-                </div>
-            </section>
-        </div>
-        <p class="copy_right">© Travel & Blog</p>
-    </footer>
-</body>
+</div>
 
-
-</html>
+<?= get_footer() ?>
