@@ -315,4 +315,18 @@ SP
     padding: 0;
   }
 }
-    
+
+.post-link {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  .post-link {
+    width: 100%;
+  }
+}
