@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . '/functions/pagination.php';
+include_once __DIR__ . '/functions/register_sidebar.php';
 
 function my_enqueue_styles()
 {

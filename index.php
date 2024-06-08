@@ -41,6 +41,8 @@
             ?>
         <?php endif; ?>
     </main>
+
+    <?= get_sidebar() ?>
 </div>
 
 <?= get_footer() ?>
